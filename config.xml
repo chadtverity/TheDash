@@ -63,6 +63,7 @@ Central Alberta Youth Unlimited
 		<gap:plugin name="org.apache.cordova.network-information"  />
 		<gap:plugin name="org.apache.cordova.splashscreen"  />
 		<gap:plugin name="org.apache.cordova.vibration"  />
+		<gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.2" />
 		<gap:splash src="splash.png" />
-		<gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.2." />
+		]
 	</widget>
