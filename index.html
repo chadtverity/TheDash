@@ -1,33 +1,25 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <head>
+    <title>The Dash</title>
 
-  <link href="https://s3.amazonaws.com/codiqa-cdn/codiqa.ext.css" rel="stylesheet">
-  <link href="https://s3.amazonaws.com/codiqa-cdn/mobile/1.4.2/jquery.mobile-1.4.2.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-  <link rel="stylesheet" type="text/css" href="style.css">
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="https://s3.amazonaws.com/codiqa-cdn/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-  <script src="https://s3.amazonaws.com/codiqa-cdn/codiqa.ext.js"></script>
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+         var ref = window.open('http://thedash.cayu.ca', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+         ref.addEventListener('exit', function() { alert(event.type); });
+    }
 
-  <script src="script.js"></script>
-
-</head>
-<body>
-<div data-role="page" data-control-title="Home" id="page1">
-    <div role="main" class="ui-content" style="padding: 0%">
-        <div data-controltype="htmlblock">
-            <iframe height="1000px" width="100%" src="http://thedash.cayu.ca" marginheight="0px"
-            marginwidth="0px" frameborder="0" allowfullscreen="true">
-            </iframe>
-        </div>
-    </div>
-</div>
-</body>
+    </script>
+  </head>
+  <body>
+  </body>
 </html>
